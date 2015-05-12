@@ -7,6 +7,8 @@ for layerGroup of PSD
 	PSD[layerGroup ].originalFrame = window[layerGroup ].frame
 bFold = true
 bPartial = false
+Framer.Device.contentScale = 2
+
 #SelectFromContacts.visible = false
 upperlayerOfTagPannel = new Layer
 	width:400
@@ -21,7 +23,7 @@ RedTick.states.add
 	invisible:{scale:0,opacity:0.4}
 	visible:{scale:1,opacity:1}
 RedTick.states.animationOptions={
-	curve:"spring(100,0,0)" 
+	curve:"spring(200,10,0)" 
 }
 
 GreenTick.states.add
@@ -80,7 +82,7 @@ partiallyScreen=()->
 	GreenTick.states.switchInstant("partially")
 	GreenTick.animate
 		properties:{scale:1}
-		curve:"spring(200,20,0)"
+		curve:"spring(300,15,0)"
 	if bFold
 		Utils.delay 0.2,->
 			upperlayerOfTagPannel.states.switchInstant("rePosToPartially")
@@ -94,9 +96,9 @@ partiallyScreen=()->
 		GreenTick.states.switchInstant("partially")
 		GreenTick.animate
 			properties:{scale:1,opacity:1}
-			curve:"spring(200,20,0)"
+			curve:"spring(300,15,0)"
 			
-		Utils.delay 0.2,->
+		Utils.delay 0.4,->
 			upperlayerOfTagPannel.states.switch("rePosToInvisible")
 			WhiteBackground.states.switch("fold")
 			Invisible.states.switch("fold")
@@ -124,7 +126,7 @@ invisibleScreen=()->
 	RedTick.states.switchInstant("invisible")
 	RedTick.states.switch("visible")
 	
-	Utils.delay 0.2,->
+	Utils.delay 0.4,->
 		upperlayerOfTagPannel.states.switch("rePosToPartially")
 		WhiteBackground.states.switch("fold")
 		Invisible.states.switch("fold")

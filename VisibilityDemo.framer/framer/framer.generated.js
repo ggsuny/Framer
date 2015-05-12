@@ -2331,14 +2331,14 @@ window.__imported__["Ani/layers.json.js"] = [
   }
 ]
 window.Framer.Defaults.DeviceView = {
-  "deviceScale" : -1,
+  "deviceScale" : 0.5,
   "orientation" : 0,
   "contentScale" : 1,
   "deviceType" : "iphone-6-silver"
 };
 
 window.Framer.Defaults.DeviceComponent = {
-  "deviceScale" : -1,
+  "deviceScale" : 0.5,
   "orientation" : 0,
   "contentScale" : 1,
   "deviceType" : "iphone-6-silver"
